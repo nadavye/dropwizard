@@ -55,7 +55,51 @@
                         <TEST_SUFFIX>2</TEST_SUFFIX>
                         <TEST2>alternative</TEST2>
                     </environmentVariables>
+                   <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>io.sealights.onpremise.agents.java.agent.integrations.junit.SlRunListener</value>
+                        </property>
+                    </properties>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>C:\Temp\sealights-java-1.3.157\artifacts\sl-api-1.3.157.jar</additionalClasspathElement>
+                    </additionalClasspathElements>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.sealights.on-premise.agents.plugin</groupId>
+                <artifactId>sealights-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <customerid>fake-customer-id-123</customerid>
+                    <server>http://fake-server-url.com</server>
+                    <appName>fake-app-name</appName>
+                    <moduleName>fake-module-name</moduleName>
+                    <workspacepath>c:\fake-worakpsacepath</workspacepath>
+                    <build>1</build>
+                    <branch>fake-branch</branch>
+                    <packagesincluded>com.fake.*</packagesincluded>
+                    <packagesexcluded>com.fake.excluded.*</packagesexcluded>
+                    <filesincluded>*.class</filesincluded>
+                    <buildScannerJar>C:\Temp\sealights-java-1.3.157\artifacts\sl-build-scanner-1.3.157.jar</buildScannerJar>
+                    <testListenerJar>C:\Temp\sealights-java-1.3.157\artifacts\sl-test-listener-1.3.157.jar</testListenerJar>
+                    <logLevel>INFO</logLevel>
+                    <logFolder>c:\fake-log-folder</logFolder>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>a1</id>
+                        <goals>
+                            <goal>build-scanner</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>a2</id>
+                        <goals>
+                            <goal>test-listener</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
