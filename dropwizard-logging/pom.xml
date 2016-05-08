@@ -22,6 +22,10 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    
+    <properties>
+        <sealights.skip>true</sealights.skip>
+    </properties>
 
     <dependencies>
         <dependency>
