@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>dropwizard-configuration</artifactId>
-    <name>Dropwizard Configuration Support</name>
+    <!--<name>Dropwizard Configuration Support</name>-->
 
     <dependencyManagement>
         <dependencies>
